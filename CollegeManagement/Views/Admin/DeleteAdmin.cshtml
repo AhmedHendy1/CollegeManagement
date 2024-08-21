@@ -1,0 +1,18 @@
+﻿@model CollegeManagement.Models.AdminManagementViewModel
+
+@{
+    ViewData["Title"] = "Delete Admin";
+}
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>Are you sure you want to delete the admin with email "@Model.Email"?</p>
+
+<form asp-action="DeleteAdmin" method="post">
+    <input type="hidden" asp-for="Email" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

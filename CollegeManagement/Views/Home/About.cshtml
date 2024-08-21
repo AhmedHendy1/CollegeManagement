@@ -1,0 +1,176 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+
+<style>
+    
+
+    :root {
+        --light-color: rgb(255, 255, 255);
+        --linked-color: rgb(29, 98, 201);
+        --twit-color: rgb(106, 161, 244);
+        --whats-color: rgb(15, 252, 114);
+        --inst-color: rgb(184, 13, 90);
+    }
+
+    li .my-name {
+        font-style: normal !important;
+        text-shadow: 1px 2px 5px #5a060693;
+        font-weight: 600;
+    }
+
+    strong {
+        color: #8b0a0a;
+        font-style: normal;
+        margin-right: 5px;
+    }
+
+    .list-unstyled li {
+        font-style: italic;
+        color: gray;
+        letter-spacing: 0.6px;
+    }
+
+    .card-header {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .alert-success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }
+
+    .alert-heading {
+        font-size: 1.5rem;
+        color: #155724;
+    }
+
+    /======Login Social Icons=====================/
+    .social-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .login__social--icon {
+        display: flex;
+        justify-content: center;
+    }
+
+    .login__social--icon a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: transparent;
+        border: 3px solid;
+        font-size: 1.6rem;
+        border-radius: 50%;
+        margin-left: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .login__social--icon a:first-child {
+        color: var(--linked-color);
+        border-color: var(--linked-color);
+    }
+
+    .login__social--icon a:nth-child(2) {
+        color: var(--inst-color);
+        border-color: var(--inst-color);
+    }
+
+    .login__social--icon a:nth-child(3) {
+        color: var(--twit-color);
+        border-color: var(--twit-color);
+    }
+
+    .login__social--icon a:nth-child(4) {
+        color: var(--whats-color);
+        border-color: var(--whats-color);
+    }
+
+    .login__social--icon a:hover {
+        color: var(--light-color);
+        transform: scale(1.05) translateY(-5px);
+        border: 3px solid var(--light-color);
+    }
+
+    .login__social--icon a:first-child:hover {
+        box-shadow: 0 0 9px var(--linked-color);
+        background-color: var(--linked-color);
+    }
+
+    .login__social--icon a:nth-child(2):hover {
+        box-shadow: 0 0 9px var(--inst-color);
+        background-color: var(--inst-color);
+    }
+
+    .login__social--icon a:nth-child(3):hover {
+        box-shadow: 0 0 9px var(--twit-color);
+        background-color: var(--twit-color);
+    }
+
+    .login__social--icon a:nth-child(4):hover {
+        box-shadow: 0 0 9px var(--whats-color);
+        background-color: var(--whats-color);
+    }
+</style>
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+    <div class="row">
+        <!-- About Me Card -->
+        <div class="col-md-12 mb-4">
+            <div class="card shadow-sm border-primary">
+                <div class="card-header bg-primary border-primary text-white">
+                    About Me
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>Name:</strong> <span class="my-name">Ahmed Helmy Mohamed</span></li>
+                        <li class="mb-2"><strong>School:</strong> Faculty of Electronic Engineering</li>
+                        <li class="mb-2"><strong>Current Level:</strong> Third-Year Student</li>
+                        <li class="mb-2"><strong>Course:</strong> ITI MVC .NET Core</li>
+                        <li><strong>Project Goal:</strong> This project is a valuable learning experience, allowing me to apply my knowledge of web development and .NET technologies in a practical and meaningful way.</li>
+                    </ul>
+                    <hr />
+                    <div class="social-box">
+                        <h5>Social Links</h5>
+                        <div class="login__social--icon">
+                            <a href="https://www.linkedin.com/in/ahmed-helmy-0aba08252/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+                            <a href="https://www.instagram.com/ahmed_helmy_hendy/" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+                            <a href="https://www.facebook.com/ahmedhelmy20200" target="_blank"><i class='bx bxl-twitter'></i></a>
+                            <a href="https://api.whatsapp.com/send/?phone=201204949054" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- About the Project Card -->
+        <div class="col-md-12 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-secondary text-white">
+                    About the Project
+                </div>
+                <div class="card-body">
+                    <p class="card-text">This project is developed as part of the ITI course on MVC .NET Core. It aims to provide a comprehensive system for managing various aspects of college administration, including students, courses, departments, and employees. The application features role-based authentication, allowing different user roles (admin, employee, student) to access specific functionalities and manage data relevant to their roles.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thank You Message -->
+        <div class="col-md-12 text-center">
+            <div class="alert alert-success shadow-sm">
+                <h4 class="alert-heading">Thank You!</h4>
+                <p>Thank you for visiting the College Management project page. I hope you find the information helpful and inspiring. Have a great day!</p>
+            </div>
+        </div>
+    </div>
+</div>

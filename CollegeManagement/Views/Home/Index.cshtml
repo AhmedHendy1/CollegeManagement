@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "College Management";
+}
+
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4; /* Light background color for the page */
+    }
+
+    .content {
+        text-align: center;
+        margin-top: 20vh; /* Center vertically with some margin from the top */
+    }
+
+    .text-large {
+        font-size: 4rem; /* Adjust size as needed */
+        font-weight: bold;
+        color: #333; /* Dark text color for better readability */
+        margin-bottom: 2.5rem; /* Space between title and buttons */
+        text-shadow:1px 5px 5px #aaa;
+    }
+
+    .btn {
+        background-color: #007bff; /* Bootstrap primary color */
+        color: white;
+        border: 1px solid #007bff;
+        padding: .5rem 2rem;
+        border-radius: 1.5rem;
+        font-size: 1.18rem;
+        font-weight: 400;
+        margin: 5px;
+        cursor: pointer;
+        text-decoration: none; /* Remove underline from links */
+        display: inline-block; /* Ensure buttons are inline */
+        transition: background-color 0.3s ease;
+    }
+
+        .btn:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+    .btn-outline {
+        border: 1px solid #fff;
+        background-color: transparent;
+        color:black;
+    }
+
+        .btn-outline:hover {
+            background-color: #007bff;
+            color: white;
+        }
+</style>
+
+<div class="content">
+    <h1 class="text-large">College Management</h1>
+    <div class="mt-5">
+        <a href="/Home/About" class="btn">About</a>
+        <a href="/Account/Login" class="btn btn-outline">Login</a>
+    </div>
+</div>

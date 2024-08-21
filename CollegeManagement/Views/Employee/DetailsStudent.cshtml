@@ -1,0 +1,64 @@
+﻿@model CollegeManagement.Models.StudentCourseViewModel
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<div class="container mt-4">
+    <h1>@ViewData["Title"]</h1>
+
+    <!-- Student Information -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">Student Information</h3>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4 font-weight-bold">Name</dt>
+                <dd class="col-sm-8">@Model.Student.Name</dd>
+
+                <dt class="col-sm-4 font-weight-bold">Date of Birth</dt>
+                <dd class="col-sm-8">@Model.Student.DateOfBirth.ToShortDateString()</dd>
+
+                <dt class="col-sm-4 font-weight-bold">Email</dt>
+                <dd class="col-sm-8">@Model.Student.Email</dd>
+
+                <dt class="col-sm-4 font-weight-bold">Department</dt>
+                <dd class="col-sm-8">@Model.Student.Department.Name</dd>
+            </dl>
+        </div>
+    </div>
+
+    <!-- Enrolled Courses -->
+    <div class="card">
+        <div class="card-header bg-success text-white">
+            <h3 class="mb-0">Enrolled Courses</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var course in Model.Courses)
+                    {
+                        <tr>
+                            <td>@course.Title</td>
+                            <td>@course.Description</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Back to List Button -->
+    <div class="mt-3">
+        <a asp-action="Students" class="btn btn-secondary">Back to Students</a>
+    </div>
+</div>

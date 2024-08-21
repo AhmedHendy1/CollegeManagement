@@ -1,0 +1,34 @@
+﻿@model IEnumerable<CollegeManagement.Models.Department>
+
+@{
+    ViewData["Title"] = "Departments";
+}
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="CreateDepartment" class="btn btn-primary">Create New Department</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var department in Model)
+        {
+            <tr>
+                <td>@department.Name</td>
+                <td>
+                    <a asp-action="EditDepartment" asp-route-id="@department.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="DeleteDepartment" asp-route-id="@department.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

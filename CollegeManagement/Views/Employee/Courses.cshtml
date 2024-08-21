@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CollegeManagement.Models.Course>
+
+@{
+    ViewData["Title"] = "Courses";
+}
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="CreateCourse" class="btn btn-primary">Create New Course</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>@course.Title</td>
+                <td>@course.Description</td>
+                <td>
+                    <a asp-action="EditCourse" asp-route-id="@course.Id" class="btn btn-warning">Edit</a>|
+                    <a asp-action="DeleteCourse" asp-route-id="@course.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

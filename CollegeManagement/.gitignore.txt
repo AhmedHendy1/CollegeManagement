@@ -1,0 +1,52 @@
+# .NET Build Folders
+bin/
+obj/
+out/
+*.dll
+*.exe
+*.exe.config
+*.pdb
+*.cache
+*.log
+
+# ASP.NET specific files
+*.user
+*.suo
+*.sln.docstates
+
+# Visual Studio files
+.vscode/
+*.csproj.user
+*.suo
+*.nupkg
+*.dotCover
+*.ncrunch*
+*.rpt
+*.vs/
+.vsconfig
+
+# JetBrains Rider
+.idea/
+
+# Node.js
+node_modules/
+npm-debug.log
+
+# ASP.NET Core
+appsettings.Development.json
+appsettings.json
+.env
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# User-specific files
+*.DS_Store
+Thumbs.db

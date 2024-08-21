@@ -1,0 +1,38 @@
+﻿@model CollegeManagement.Models.EnrollmentViewModel
+
+@{
+    ViewData["Title"] = "Enroll in Courses";
+}
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="EnrollCourses" method="post">
+    @Html.AntiForgeryToken()
+
+    <input asp-for="StudentId" type="hidden" />
+
+    <div class="form-group">
+        <label>Available Courses</label>
+        <div>
+            @foreach (var course in Model.AvailableCourses)
+            {
+                <div class="form-check">
+                    <input type="checkbox" name="SelectedCourseIds" value="@course.Id" class="form-check-input"
+                    @(Model.SelectedCourseIds.Contains(course.Id) ? "checked" : "")
+                    @(Model.EnrolledCourses.Contains(course.Id) ? "disabled" : "") />
+                    <label class="form-check-label">
+                        @course.Title
+                    </label>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Enroll</button>
+    </div>
+</form>
+
+<a asp-action="DetailsStudent" asp-controller="Employee" asp-route-id="@Model.StudentId" class="btn btn-secondary">Back to Student Details</a>

@@ -1,0 +1,46 @@
+﻿@model CollegeManagement.Models.EmployeeDashboardViewModel
+
+@{
+    ViewData["Title"] = "Employee Dashboard";
+}
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<h2>@ViewData["Title"]</h2>
+
+<div class="container">
+    <div class="row">
+        <!-- Manage Students -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Manage Students</h4>
+                    <p class="card-text">Add, edit, or delete students from this section.</p>
+                    <a class="btn btn-primary" asp-controller="Employee" asp-action="Students">Manage Students</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manage Courses -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Manage Courses</h4>
+                    <p class="card-text">Add, edit, or delete courses from this section.</p>
+                    <a class="btn btn-success" asp-controller="Employee" asp-action="Courses">Manage Courses</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manage Departments -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Manage Departments</h4>
+                    <p class="card-text">Add, edit, or delete departments from this section.</p>
+                    <a class="btn btn-info" asp-controller="Employee" asp-action="Departments">Manage Departments</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

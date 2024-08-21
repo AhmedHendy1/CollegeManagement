@@ -1,0 +1,47 @@
+﻿@model CollegeManagement.Models.AdminDashboardViewModel
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="text-center">@ViewData["Title"]</h2>
+
+<div class="container mt-4" style="margin : 20px 0 ;">
+    <div class="row">
+        <!-- Manage Employees -->
+        <div class="col-md-4 mb-4">
+            <div class="card border-primary shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title text-primary">Manage Employees</h4>
+                    <p class="card-text">Add, edit, or delete employees from this section. Use this option to manage your team efficiently.</p>
+                    <a class="btn btn-outline-primary btn-lg" asp-controller="Admin" asp-action="ManageEmployees">Manage Employees</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add New Admin -->
+        <div class="col-md-4 mb-4">
+            <div class="card border-success shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title text-success">Add New Admin</h4>
+                    <p class="card-text">Create a new admin account by providing the required details. Ensure that the email is unique.</p>
+                    <a class="btn btn-outline-success btn-lg" asp-action="AddAdmin">Add New Admin</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- View All Admins -->
+        <div class="col-md-4 mb-4">
+            <div class="card border-info shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title text-info">View All Admins</h4>
+                    <p class="card-text">View a list of all registered admins and manage them. You can edit or delete admins from this section.</p>
+                    <a class="btn btn-outline-info btn-lg" asp-action="ViewAdmins">View All Admins</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

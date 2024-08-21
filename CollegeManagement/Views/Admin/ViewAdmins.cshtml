@@ -1,0 +1,34 @@
+﻿@model IEnumerable<CollegeManagement.Models.Admins>
+
+@{
+    ViewData["Title"] = "View All Admins";
+}
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var admin in Model)
+        {
+            <tr>
+                <td>@admin.Email</td>
+                <td>
+                    <!-- Edit Admin Button -->
+                    <a class="btn btn-warning" asp-action="EditAdmin" asp-route-email="@admin.Email">Edit</a> |
+
+                    <!-- Delete Admin Button -->
+                    <a class="btn btn-danger" asp-action="DeleteAdmin" asp-route-email="@admin.Email">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

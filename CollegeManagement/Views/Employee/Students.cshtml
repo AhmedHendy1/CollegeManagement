@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CollegeManagement.Models.Student>
+
+@{
+    ViewData["Title"] = "Students";
+}
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<h2>Students</h2>
+
+<p>
+    <a class="btn btn-primary" asp-action="CreateStudent">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.DateOfBirth.ToString("yyyy-MM-dd")</td>
+                <td>@item.Email</td>
+                <td>@item.Department.Name</td>
+                <td>
+                    <a class="btn btn-secondary" asp-action="EditStudent" asp-route-id="@item.Id">Edit</a> |
+                    <a class="btn btn-danger" asp-action="DeleteStudent" asp-route-id="@item.Id">Delete</a>|
+                    <a class="btn btn-primary" asp-action="EnrollCourses" asp-route-id="@item.Id">Enroll</a>|
+                    <a class="btn btn-warning" asp-action="DetailsStudent" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

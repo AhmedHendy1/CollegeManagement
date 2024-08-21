@@ -1,0 +1,35 @@
+﻿@model CollegeManagement.Models.StudentCourseViewModel
+
+@{
+    ViewData["Title"] = "Student Dashboard";
+}
+@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+<h2>@ViewData["Title"]</h2>
+
+<div class="container">
+    <div class="row">
+        <!-- View Details -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">View Details</h4>
+                    <p class="card-text">View your detailed information and courses.</p>
+                    <a class="btn btn-info" asp-action="Details">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Change Password -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Change Password</h4>
+                    <p class="card-text">Change your password.</p>
+                    <a class="btn btn-primary" asp-action="ChangePassword">Change Password</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
